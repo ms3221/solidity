@@ -1,1 +1,1 @@
-# solidity_pratice
+###  💡 solidity-Function 💡
