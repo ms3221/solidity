@@ -15,7 +15,7 @@ contract ArrayShift {
     // remove array element by shifting elements to left;
     function remove(uint _index) public {
       require(_index < arr.length, "index out of bound");
-      for(uint i=0; i<arr.length-1; i++){
+      for(uint i=_index; i<arr.length-1; i++){
           arr[i] = arr[i+1];
       }
       arr.pop();
