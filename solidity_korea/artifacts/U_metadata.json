@@ -7,24 +7,12 @@
 		"abi": [
 			{
 				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "deposit",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getBalance",
+				"name": "name",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -32,12 +20,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "owner",
+				"name": "text",
 				"outputs": [
 					{
-						"internalType": "address payable",
+						"internalType": "string",
 						"name": "",
-						"type": "address"
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -57,7 +45,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_korea/Payable1.sol": "Payable"
+			"solidity_korea/CallParentConstructors.sol": "U"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -71,12 +59,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_korea/Payable1.sol": {
-			"keccak256": "0x19454fff5701343d4115fdba510055f1334a7234135ccc33f20e79f1bb8fb352",
+		"solidity_korea/CallParentConstructors.sol": {
+			"keccak256": "0x822fae1ecca7e53377cdb3a585dda9c33eac0f06fb6033296a59ce028c14e507",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6521273ec21644c983c919ca274112a0dac4932a60e473bb163ceac4a50c1034",
-				"dweb:/ipfs/QmZ6DrhtghPwYtPy34ryTjWkryQ9gKu3b3iHaBfnCmsWr5"
+				"bzz-raw://e1820d8ef23e9ec4b18afabf9d248f9e198ee977863cea0558f1bc682b10125d",
+				"dweb:/ipfs/QmPdeHD78xV3DW6dmit2NyFP8ut76zhrcyHV9Z3g1z7Jze"
 			]
 		}
 	},

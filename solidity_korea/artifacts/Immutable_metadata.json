@@ -7,35 +7,10 @@
 		"abi": [
 			{
 				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "deposit",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getBalance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "owner",
 				"outputs": [
 					{
-						"internalType": "address payable",
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -57,7 +32,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_korea/Payable1.sol": "Payable"
+			"solidity_korea/Payable1.sol": "Immutable"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -72,11 +47,11 @@
 	},
 	"sources": {
 		"solidity_korea/Payable1.sol": {
-			"keccak256": "0x19454fff5701343d4115fdba510055f1334a7234135ccc33f20e79f1bb8fb352",
+			"keccak256": "0xa48630f86c3b3f72aaf180126bb097c8c9d29edade30372bdfe7fb3053841f15",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6521273ec21644c983c919ca274112a0dac4932a60e473bb163ceac4a50c1034",
-				"dweb:/ipfs/QmZ6DrhtghPwYtPy34ryTjWkryQ9gKu3b3iHaBfnCmsWr5"
+				"bzz-raw://0690ffbfc23dfb1f3c91afa736ee358c9d0846b52a21511937281340bd696e99",
+				"dweb:/ipfs/QmRormk1p1QxKCPeD7fDiKSqgzoLbYvaBCMj1qphMxFGiZ"
 			]
 		}
 	},

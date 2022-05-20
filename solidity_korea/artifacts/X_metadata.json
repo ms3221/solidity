@@ -7,40 +7,41 @@
 		"abi": [
 			{
 				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "deposit",
-				"outputs": [],
-				"stateMutability": "payable",
+				"name": "bar",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "getBalance",
+				"name": "foo",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "owner",
+				"name": "x",
 				"outputs": [
 					{
-						"internalType": "address payable",
+						"internalType": "string",
 						"name": "",
-						"type": "address"
+						"type": "string"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -57,7 +58,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_korea/Payable1.sol": "Payable"
+			"solidity_korea/multipleInheritance.sol": "X"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -71,12 +72,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_korea/Payable1.sol": {
-			"keccak256": "0x19454fff5701343d4115fdba510055f1334a7234135ccc33f20e79f1bb8fb352",
+		"solidity_korea/multipleInheritance.sol": {
+			"keccak256": "0x3e5a3b5dc02c8f7431534420ef07ad009b29dc1b2f5f07f947a7a860e78c0c95",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6521273ec21644c983c919ca274112a0dac4932a60e473bb163ceac4a50c1034",
-				"dweb:/ipfs/QmZ6DrhtghPwYtPy34ryTjWkryQ9gKu3b3iHaBfnCmsWr5"
+				"bzz-raw://b0e8ad2cb0dbd5d8bcf34c76ffb7e2e1988b1b709eac4db7bec32a2f555206c6",
+				"dweb:/ipfs/QmXmUgojddFcoePHBdsHxfPGt4cqQUrpqejjswqaFA5rmX"
 			]
 		}
 	},

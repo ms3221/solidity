@@ -7,19 +7,7 @@
 		"abi": [
 			{
 				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "deposit",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getBalance",
+				"name": "B",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -27,20 +15,20 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "owner",
+				"name": "pubTest",
 				"outputs": [
 					{
-						"internalType": "address payable",
+						"internalType": "uint256",
 						"name": "",
-						"type": "address"
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -57,7 +45,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_korea/Payable1.sol": "Payable"
+			"solidity_korea/visibility.sol": "B"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -71,12 +59,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_korea/Payable1.sol": {
-			"keccak256": "0x19454fff5701343d4115fdba510055f1334a7234135ccc33f20e79f1bb8fb352",
+		"solidity_korea/visibility.sol": {
+			"keccak256": "0x0195ea7628d800dd174b29422938e315b635ce2a8c421bed3c2cc4fc84a80b58",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6521273ec21644c983c919ca274112a0dac4932a60e473bb163ceac4a50c1034",
-				"dweb:/ipfs/QmZ6DrhtghPwYtPy34ryTjWkryQ9gKu3b3iHaBfnCmsWr5"
+				"bzz-raw://7c237bad17e93f1e47ef4c37f2be2eac7b2360d369d446bbfc94322f4dfb6928",
+				"dweb:/ipfs/QmQP1H6tQfLGpY5jF7YzNGCJ3DMAjYmxUeW5t56vwFWBwk"
 			]
 		}
 	},
