@@ -10,35 +10,19 @@
 				"inputs": [
 					{
 						"indexed": false,
-						"internalType": "string",
-						"name": "func",
-						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "sender",
-						"type": "address"
-					},
-					{
-						"indexed": false,
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					},
 					{
 						"indexed": false,
-						"internalType": "bytes",
-						"name": "data",
-						"type": "bytes"
+						"internalType": "uint256",
+						"name": "gas",
+						"type": "uint256"
 					}
 				],
 				"name": "Log",
 				"type": "event"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "fallback"
 			},
 			{
 				"stateMutability": "payable",
@@ -58,7 +42,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_korea/Fallback.sol": "Fallback"
+			"solidity_korea/sendEth.sol": "EthReceiver"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -72,11 +56,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_korea/Fallback.sol": {
-			"keccak256": "0x2ba526293bc97ac84e8bf45e25956dda11ff0da2e242651528363f8185b785c0",
+		"solidity_korea/sendEth.sol": {
+			"keccak256": "0x6d6af84bec3db371b367708e25502ed65b99084ef42efeab73b3248589208072",
 			"urls": [
-				"bzz-raw://0b64585fb9782b230e6ee4f0c718474337bf23e53ae1904f5f60625c9f925f99",
-				"dweb:/ipfs/Qmb5mru3TepveXrrM9zBP2xA48JAgeV6K6nwdz7UhLiS9e"
+				"bzz-raw://f73103569128963987b60081a71da774304176a53ecf6acd7d6b72153805a5cc",
+				"dweb:/ipfs/Qmccphn8HEbNMje5gvdG6Qg6yxJYMB4pYs4QaDVR2gJxhS"
 			]
 		}
 	},
