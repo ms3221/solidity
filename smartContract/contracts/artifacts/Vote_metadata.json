@@ -1,0 +1,266 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "proposalIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "chairperson",
+						"type": "address"
+					}
+				],
+				"name": "showProposal",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "proposalIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "answer",
+						"type": "string"
+					}
+				],
+				"name": "voteReceipt",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "chairperson",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "unionId",
+						"type": "bytes32"
+					}
+				],
+				"name": "createProposal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "proposalLen",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "totalProposal",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "chairperson",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "UnionId",
+								"type": "bytes32"
+							},
+							{
+								"components": [
+									{
+										"internalType": "bytes32",
+										"name": "unionId",
+										"type": "bytes32"
+									},
+									{
+										"internalType": "address",
+										"name": "addr",
+										"type": "address"
+									},
+									{
+										"internalType": "uint256",
+										"name": "asset",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bool",
+										"name": "voted",
+										"type": "bool"
+									},
+									{
+										"internalType": "string",
+										"name": "answer",
+										"type": "string"
+									}
+								],
+								"internalType": "struct Vote.Voter[]",
+								"name": "Voters",
+								"type": "tuple[]"
+							},
+							{
+								"internalType": "bool",
+								"name": "open",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "index",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Vote.Proposal",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "totalVoteOutput",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes32",
+								"name": "unionId",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "address",
+								"name": "addr",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "asset",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "voted",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "answer",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Vote.Voter[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "answer",
+						"type": "string"
+					}
+				],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"smartContract/contracts/Test.sol": "Vote"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"smartContract/contracts/Test.sol": {
+			"keccak256": "0x4bfe254ba56e4bbc8ac72a18986f75e8b3a5a8e410fc5b6b17725150bc90b17c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://27f80779518aa96109ac595fa52eb11147f27148a5006fe45aff79025abef54e",
+				"dweb:/ipfs/QmRBMZZRza1LhBjRaMiLo4SDY7jSWCZiaYFsJsBGD2wLpL"
+			]
+		}
+	},
+	"version": 1
+}

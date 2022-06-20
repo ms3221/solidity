@@ -1,175 +1,142 @@
 
 
-// SPDX-License-Identifier: MIT
+   
+/// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract Votes{
+contract Union{
 
-//제안서를 만든사람 
- address public chairperson;
+/*
+ Union 컨트랙트에서는 Union이 여러가지 투표안건을 만들 수 있고 투표할 수 있는 컨트랙트입니다. 
 
-//제안서 index
-uint public proposalLen = 0; // 제안서 숫자 값입니다. 제안이 생성될 때마다 1씩 올라갑니다.
+------  변수명 설명 ------
+Proposals -> Union Member들이 투표할 수 있는 여러제안들입니다. 
+suggestion -> 하나의 제안이며 투표할 수 있습니다. 
+Voter -> suggestion에 투표하는 union Member 각 한명의 구조체입니다. 
+*/
 
-//거버넌스에 투표하는 voter 구조체 
-    struct Voter {
-        bytes32 unionId;
-        // 어떤 proposal인지 
+
+address public chairperson;
+string public unionName;
+uint public suggestionNo;
+mapping (string => uint) findSuggestionNo;
+Suggestion[] public suggestions; 
+
+
+
+  struct Suggestion {
+       
+        string subject;
+        uint suggestionNo;
+        uint[] unionMember;
+        bool status;
+        
+    }
+
+
+  struct Voter {
+        string suggestion;
         address addr;
-        // 주소
         uint256 asset;
-        // 베팅 금액
         bool voted;
-        // 투표여부
         string answer;
-        //투표
     }
 
 
-struct Proposal {
-        address chairperson;
-        bytes32 UnionId;
-        Voter[] Voters;
-        bool open;
-           // 참여자 정보
+    constructor(string memory _unionName,address owner){
+       chairperson = owner;
+       unionName = _unionName;
     }
 
+ Voter public voter;
 
- // 각종 이벤트들 
-event showProposal(bytes32 indexed unionId, address indexed chairperson); 
-event voteReceipt(address indexed voter, string answer);
-   
-  Proposal public proposal;
-
-
-//* 컨트랙트를 생성과 동시에 제안이 만들어져있다. 
-//* 만들어질때 unionId, chairPersion, open 값들이 담겨진다. 
- 
-    constructor(bytes32 unionId){
-       proposal.chairperson = msg.sender;
-       proposal.UnionId = unionId;
-       proposal.open = true;
-       emit showProposal(unionId,msg.sender);
-    }
-
-
+/*
+  @param 
+  subject -> 어떤 주제로 안건을 만들것인지
+*/
+function createOneSuggestion(string memory _subject)external returns (Suggestion memory) {
+     Suggestion memory suggestion;
+     suggestion.subject = _subject;
+     suggestion.suggestionNo = suggestionNo;
+     suggestion.status = true;
+     findSuggestionNo[_subject] = suggestionNo;
+     suggestions.push(suggestion);
+     suggestionNo++;
+     return suggestion;
+}
 
 
      //중복투표 및 제안서를 낸 사람을 미리 check해주는 modifier
-     modifier valid(address voter){
-        
-         for(uint i=0; i<proposal.Voters.length; i++){
-             if(proposal.Voters[i].addr == voter){
-               require(proposal.Voters[i].voted == false, "voter already voted"); 
-             }
-         }
-        require(msg.sender !=  proposal.chairperson,"chairperson is not alrigth");
-        _;
-    }
+    //  modifier validVoter(string memory _subject,address voter){
+    //     Suggestion storage singleSuggestion = suggestions[findSuggestionNo[_subject]];
+    //      for(uint i=0; i<singleSuggestion.unionMember.length; i++){
+    //          if(singleSuggestion.unionMember[i].addr == voter){
+    //            require(singleSuggestion.unionMember[i].voted == false, "voter already voted"); 
+    //          }
+    //      }
+    //     require(voter != chairperson, "chairperson is not alrigth");
+    //     _;
+    // }
 
-    // 3.투표하는 함수
-     function vote (string memory answer) public payable valid(msg.sender) {
-     require(proposal.open == true, "current proposal closed");
-     require(msg.value >= 1e18,"more than send the token");
-
-      Voter memory voter = Voter({
-          addr:msg.sender,
-          asset:msg.value,
-          voted:true,
-          answer:answer,
-          unionId : proposal.UnionId
-          });
-      address(this).call{value:msg.value};
-      proposal.Voters.push(voter);
-      emit voteReceipt(msg.sender, answer);
-    }
-
-    //투표내역이 전부 나오게 된다. 
-    function totalVoteOutput() external view returns(Voter[] memory){
-        Voter[] memory result = proposal.Voters;
-      return  result;
-    }
-
-    function totalProposal() external view returns(Proposal memory){
-    //  Proposal memory result = proposal;
-    //   return result.UnionId;
-     Proposal memory result = proposal;
-     return result;
+   /// 3.투표하는 함수
+     function vote (string memory _subject, string memory _answer) public payable returns(Suggestion memory) {
+       Suggestion storage singleSuggestion = suggestions[findSuggestionNo[_subject]];
+      //  require(singleSuggestion.status == true, "current suggestion closed");
+      //   Voter memory singleVoter;
+      //   singleVoter.suggestion=_subject;
+      //   singleVoter.addr = msg.sender;
+      //   singleVoter.asset = msg.value;
+      //   singleVoter.voted = false;
+      //   singleVoter.answer = _answer;
+     
+      //  singleSuggestion.unionMember.push(singleVoter);
+      //  //address(this).call{value:msg.value};
+      //  suggestions[findSuggestionNo[_subject]] =singleSuggestion;
+       return singleSuggestion;
     }
 
 }
 
 
-    //미리 투표가능한 인원을 조합마다 한정해서 투표 권한을 부여해주는 함수 
-    // function registerVoter(address[] memory addrs, uint proposalIndex) external returns(address[] memory){
-    //      for(uint i=0; i<addrs.length; i++){
-    //       Voter memory voter;
-    //       voter.addr = addrs[i];
-    //       Proposals[proposalIndex].Voters.push(voter); 
-    //    }
-    //    return addrs;
-    //    }
-
-     //등록된 주소인지 확인하는 함수 
-    //  function validAddress(uint proposalIndex) internal view returns(bool result){
-    //      uint check = 0;
-    //      for(uint i=0; i< Proposals[proposalIndex].Voters.length; i++){
-    //      Proposals[proposalIndex].Voters[i].addr == msg.sender;
-    //     check++;
-    //    }
-    //    if(check > 0){
-    //        result = true;
-    //    }else {
-    //        result = false;
-    //    }
-    //  }
 
 
-contract VoteContractFactory {
+contract UnionFactory {
 
-    //* vote contract를 생성하는 함수 
+     Union[] public unions; 
+     mapping(string => address) findUnionAddress;
+
    /*
-      VoteContractFactory의 기능은 각 해산안 마다 컨트랙트를 만들어 주는 역할을 합니다.
-      각 contract의 주소를 묶어주는 역할의 배열 혹은 mapping이 필요합니다. 
+      각각 해당하는 union contract를 생성하는 함수 
+      UnionFactory의 기능은 각 조합에 해당하는 컨트랙트를 만들어 주는 가장 큰 상위의 컨트랙트입니다.
+      
+      ----- 변수명 설명 ------ 
+      unions -> 각각의 union Contract를 담을 수 있는 union 컨트랙트로 이루어진 배열객체
+      findUnionAddress -> 조합이름을 가지고 컨트랙트 주소를 찾기 위한 mapping 
+
     */
 
- struct Voter {
-        bytes32 unionId;
-        // 어떤 proposal인지 
-        address addr;
-        // 주소
-        uint256 asset;
-        // 베팅 금액
-        bool voted;
-        // 투표여부
-        string answer;
-        //투표
-    }
 
-struct Proposal {
-        address chairperson;
-        bytes32 UnionId;
-        Voter[] Voters;
-        bool open;
-           // 참여자 정보
-    }
-
-    Votes[] public votes; 
-
-    function voteFactory(bytes32 unionId)external {
-         Votes vote = new Votes(unionId);
-         votes.push(vote);
+   /*
+     @param 
+     unionName : 만들려고하는 조합의 이름 
+   */
+    function createUnion(string memory unionName,address chairperson)external {
+        Union singleUnion = new Union(unionName,chairperson);
+        findUnionAddress[unionName] = address(singleUnion);
+        unions.push(singleUnion);
     } 
+
+    /*
+     지금까지 몇개의 조합이 만들어져있는지 읽기위한 함수 
+   */
+    function totalUnionNumber()external view returns(uint num){
+       num = unions.length;
+    }  
+    /*
+      unionName을입력하면 해당하는 contractAddress를 알 수 있는 함수. 
+    */
+    function UnionAddress(string memory unionName) external view returns(address unionAddress){
+        unionAddress = findUnionAddress[unionName];
+    }
     
-    function subVote(address _addr,string memory answer ) external {
-        Votes(_addr).vote(answer);
-    }
-    function subVoteUnionId(address _addr) external view returns(Votes.Proposal memory){
-      return  Votes(_addr).totalProposal();
-    } 
-
-    //   function subVoteVoter(address _addr) external view returns(Vote.Proposal memory){
-    //   return  Vote(_addr).totalVoteOutput();
-    // } 
-   
 }
