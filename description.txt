@@ -1,1 +1,6 @@
+
+
+### npm 설치 명령어 
+install -g @remix-project/remixd
+### remix-ided와 연결할 때 사용하는 명령어 
 sudo remixd -s /Users/anhyeongjun/Desktop/solidity --remix-ide https://remix.ethereum.org/
