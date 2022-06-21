@@ -26,6 +26,7 @@ Suggestion[] public suggestions;
         string subject;
         uint suggestionNo;
         Voter[] unionMember;
+        uint totalAmount;
         bool status;
         
     }
@@ -56,6 +57,7 @@ function createOneSuggestion(string memory _subject) external {
      suggestion.subject = _subject;
      suggestion.suggestionNo = suggestionNo;
      suggestion.status = true;
+     suggestion.totalAmount = 0;
      findSuggestionNo[_subject] = suggestionNo;
      suggestionNo++;
 }
@@ -79,7 +81,6 @@ function createOneSuggestion(string memory _subject) external {
         require(singleSuggestion.status == true, "current suggestion closed");
         Voter memory singleVoter = Voter(_subject,msg.sender,msg.value,true,_answer);
         singleSuggestion.unionMember.push(singleVoter);
-        address(this).call{value:msg.value};
     }
 
      function SuggestionVoter(string memory _subject) external view returns(Voter[] memory){

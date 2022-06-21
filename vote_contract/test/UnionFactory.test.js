@@ -30,7 +30,7 @@ contract("UnionFactory", function (accounts) {
         const tokenAddress = await unionFactory.UnionTokenAddress("마켓컬리1호");
 		union = await Union.at(unionAddress);
         token = await UnionToken.at(tokenAddress)
-        await token.mintToken(wallet2, web3.utils.toWei('2','ether'));
+        await token.mintToken(wallet2,123);
     });
      
 
@@ -52,12 +52,11 @@ contract("UnionFactory", function (accounts) {
 		    const tokenName = await token.name();
             assert.equal(tokenName, "마켓컬리1호");
         });
-
+      
         it('4. wallet2 token totalNumber is two', async () => {
           
 		    const supply = await token.balanceOf(wallet2);
-            console.log(supply);
-            assert.equal(supply, 2);
+            assert.equal(supply.toNumber(),123);
         });
    
   });
