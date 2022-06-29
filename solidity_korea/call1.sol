@@ -20,8 +20,8 @@ contract TestCall{
 
 contract Call {
     bytes public data;
-    function callFoo(address _test) external payable {
-      (bool success, bytes memory _data) = _test.call{value:123}(abi.encodeWithSignature("foo(string,uint)","call foo",123));
+    function callFoo(address payable _test) external payable {
+      (bool success, bytes memory _data) = _test.call(abi.encodeWithSignature("foo(string,uint)","call foo",123));
       require(success,"call failed");
      data = _data;
     }
@@ -29,6 +29,11 @@ contract Call {
     function callDoseNotExit(address _test) external {
         (bool success, ) = _test.call(abi.encodeWithSignature("doesNotExist()"));
         require(success,"call failed");
+    }
+
+    function test(address payable _addr) external returns(uint){
+        (bool success, uint  _data) = TestCall(_addr).foo("call foo",123);
+         return _data;
     }
     
 }

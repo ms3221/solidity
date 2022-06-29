@@ -1,0 +1,281 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "UionArray",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "unionName",
+						"type": "string"
+					}
+				],
+				"name": "UnionAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "unionAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "unionName",
+						"type": "string"
+					}
+				],
+				"name": "UnionTokenAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "unionTokenAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "unionName",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "chairperson",
+						"type": "address"
+					}
+				],
+				"name": "createUnion",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "tokens",
+				"outputs": [
+					{
+						"internalType": "contract UnionToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalUnionNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "num",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "unionNames",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "unions",
+				"outputs": [
+					{
+						"internalType": "contract Union",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"vote_contract/contracts/UnionFactory.sol": "UnionFactory"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"vote_contract/contracts/Union.sol": {
+			"keccak256": "0xa8613abcad4d7171ae32a82fa8a34bfa206ee17576f3f2dfa17fe40c9a98dccc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4118dad801f30ae580939a43179b7346a1bff06c66c6e42fe3873c7c9b7124e2",
+				"dweb:/ipfs/QmNe6QsojiVa8eNXLc4MY8HKjBvJZMpDgwEjR92wshmXVG"
+			]
+		},
+		"vote_contract/contracts/UnionFactory.sol": {
+			"keccak256": "0xabaa9b27c52c1e004e634926008537e6e0904773f0cbc5878ed8d0008d630411",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0d129ed7aad695bafc805ad69c4643d34fda3cee3e8a404d073c1eae73e4f698",
+				"dweb:/ipfs/QmZeqdweFcdWxtdvYjKvNP953noFd355Pd89zxEMpxer8X"
+			]
+		},
+		"vote_contract/contracts/UnionToken.sol": {
+			"keccak256": "0x39eec4c367f05cffef5f34958b634659521733e9b9a39ba2e01be340c09de5d9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f1df1d3b7970e84cdbe90ece8aab16d7d195e7991c6887441f880ea339373c93",
+				"dweb:/ipfs/QmZwwWMs8Jv46HmK3gYcq6Hwd9PFxJ9vSHJxepq7ijeB52"
+			]
+		},
+		"vote_contract/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0x24e0364e503a9bbde94c715d26573a76f14cd2a202d45f96f52134ab806b67b9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e12cbaa7378fd9b62280e4e1d164bedcb4399ce238f5f98fc0eefb7e50577981",
+				"dweb:/ipfs/QmXRoFGUgfsaRkoPT5bxNMtSayKTQ8GZATLPXf69HcRA51"
+			]
+		},
+		"vote_contract/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0xe0c8b625a79bac0fe80f17cfb521e072805cc9cef1c96a5caf45b264e74812fa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://12fd1efc9ad061ef675bd50fb0c8e3c6f2952a09f8df0e3c688b8d81b8918838",
+				"dweb:/ipfs/QmawN6PjTwy91pU7ANjCSgbsLc8TDA6hwu9GsFFaNSuhb5"
+			]
+		},
+		"vote_contract/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+				"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+			]
+		},
+		"vote_contract/node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC20Snapshot.sol": {
+			"keccak256": "0x29f7bc7f4d461a2a2698052f71b29344baf0cb7bdb31ca66e4b534a5fc5e844e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f65d0dd5200b548f865cb5a2a15c2fba268644f0a04bfbc3efe79252e202f40d",
+				"dweb:/ipfs/QmXALBDXmEY4hKwZmzmuQKhZnoAMMbP7P1vdNqxcrdx2yf"
+			]
+		},
+		"vote_contract/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd",
+				"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8"
+			]
+		},
+		"vote_contract/node_modules/@openzeppelin/contracts/utils/Arrays.sol": {
+			"keccak256": "0xa7bc891be2bc5948340a8fb14ad36c8846230c9086269e37f3febf0dc239c9f7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a002427adcb3b71f2c2ad8212fa789997d5662b0c7be941bc5c52b26b83433cc",
+				"dweb:/ipfs/QmR1EfpL9zQ3zT25kRZdjcjWBqaBhdSun5MLnJV1ZdzEn1"
+			]
+		},
+		"vote_contract/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"vote_contract/node_modules/@openzeppelin/contracts/utils/Counters.sol": {
+			"keccak256": "0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee",
+				"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu"
+			]
+		},
+		"vote_contract/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+			"keccak256": "0xc995bddbca1ae19788db9f8b61e63385edd3fddf89693b612d5abd1a275974d2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ab84f13e6e6e0823854a0cddd49e96df052092d5919f95587607f0ed28a64cb6",
+				"dweb:/ipfs/QmbNtqAq23ZDjCzHukQaa7B3y6rcobscm6FZF5PMQXcnVr"
+			]
+		},
+		"vote_contract/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol": {
+			"keccak256": "0x0f633a0223d9a1dcccfcf38a64c9de0874dfcbfac0c6941ccf074d63a2ce0e1e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://864a40efcffdf408044c332a5aa38ec5618ed7b4eecb8f65faf45671bd6cdc65",
+				"dweb:/ipfs/QmQJquTMtc6fgm5JQzGdsGpA2fqBe3MHWEdt2qzaLySMdN"
+			]
+		}
+	},
+	"version": 1
+}

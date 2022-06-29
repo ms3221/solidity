@@ -30,7 +30,8 @@ contract("UnionFactory", function (accounts) {
         const tokenAddress = await unionFactory.UnionTokenAddress("마켓컬리1호");
 		union = await Union.at(unionAddress);
         token = await UnionToken.at(tokenAddress)
-        await token.mintToken(wallet2,123);
+        await token.mintToken(wallet2,1000000);
+        await token.mintToken(wallet3,1000000);
     });
      
 
@@ -56,8 +57,15 @@ contract("UnionFactory", function (accounts) {
         it('4. wallet2 token totalNumber is two', async () => {
           
 		    const supply = await token.balanceOf(wallet2);
-            assert.equal(supply.toNumber(),123);
+            
+            assert.equal(supply.toNumber(),1000000);
         });
+
+        it('5.getBalance function is alright? ', async () => {
+            const supply = await union.getBalanceVotePower(wallet2);
+            
+            assert.equal(supply.toNumber(), 1000000);
+       });
    
   });
 
@@ -70,16 +78,40 @@ contract("UnionFactory", function (accounts) {
 	       });
 
 		it('2. wallet2 execute vote function', async () => {
-		   await union.vote("1호제안","찬성",{from : wallet2});
+		   await union.vote("1호제안","찬성",1,{from : wallet2});
 		   const result = await union.SuggestionVoter("1호제안");
 		   assert.equal(result[0].addr, wallet2);
 		});
 
          it('3. wallet3 execute vote function ', async () => {
-              await union.vote("1호제안","찬성",{from : wallet3});
+              await union.vote("1호제안","찬성",100,{from : wallet3});
               const result = await union.SuggestionVoter("1호제안");
               assert.equal(result[1].addr, wallet3);
          });
+
+         it('4.getBalance function is alright? ', async () => {
+            const supply = await union.getBalanceVotePower(wallet2);
+           
+            assert.equal(supply.toNumber(), 999999);
+       });
+
+       it('5. createOneSuggestion function execute', async () => {
+	   
+        await union.createOneSuggestion("2호제안");
+        const suggestion = await union.suggestions(1);
+       assert.equal(suggestion.subject, "2호제안");
+    });
+
+    it('6. wallet2 execute vote function', async () => {
+        await union.vote("2호제안","찬성",99,{from : wallet2});
+        const result = await union.SuggestionVoter("2호제안");
+        assert.equal(result[0].addr, wallet2);
+     });
+     it('7.getBalance function is alright? ', async () => {
+        const supply = await union.getBalanceVotePower(wallet2);
+        console.log(supply.toNumber());
+        assert.equal(supply.toNumber(), 999900);
+   });
 
    });
 

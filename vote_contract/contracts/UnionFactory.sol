@@ -13,6 +13,7 @@ contract UnionFactory {
 
      Union[] public unions; 
      UnionToken[] public tokens;
+     string[] public unionNames;
      mapping(string => address) findUnionAddress;
      mapping(string => address) findTokenAddress;
 
@@ -32,13 +33,20 @@ contract UnionFactory {
      unionName : 만들려고하는 조합의 이름 
    */
     function createUnion(string memory unionName,address chairperson)external {
-        Union singleUnion = new Union(unionName,chairperson);
+        
         UnionToken singleToken = new UnionToken(unionName,"one");
+        Union singleUnion = new Union(unionName,chairperson,address(singleToken));
         findUnionAddress[unionName] = address(singleUnion);
         findTokenAddress[unionName] = address(singleToken);
+        unionNames.push(unionName);
         tokens.push(singleToken);
         unions.push(singleUnion);
     } 
+
+
+function UionArray()external view returns(string[] memory){
+  return unionNames;
+}
 
     /*
      지금까지 몇개의 조합이 만들어져있는지 읽기위한 함수 

@@ -1,27 +1,9 @@
-/**
- * Use this file to configure your truffle project. It's seeded with some
- * common settings for different networks and features like migrations,
- * compilation, and testing. Uncomment the ones you need or modify
- * them to suit your project as necessary.
- *
- * More information about configuration can be found at:
- * 
- * https://trufflesuite.com/docs/truffle/reference/configuration
- *
- * To deploy via Infura you'll need a wallet provider (like @truffle/hdwallet-provider)
- * to sign your transactions before they're sent to a remote public node. Infura accounts
- * are available for free at: infura.io/register.
- *
- * You'll also need a mnemonic - the twelve word phrase the wallet uses to generate
- * public/private key pairs. If you're publishing your code to GitHub make sure you load this
- * phrase from a file you've .gitignored so it doesn't accidentally become public.
- *
- */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
-//
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+require('dotenv').config()
+const HDWalletProvider = require("truffle-hdwallet-provider-klaytn");
+const URL = "https://api.baobab.klaytn.net:8651";
+
+
 
 module.exports = {
   /**
@@ -46,6 +28,21 @@ module.exports = {
      port: 7545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
+    klaytn: {
+      provider: () => {
+
+        return new HDWalletProvider(
+          process.env.MNE,
+          "https://api.baobab.klaytn.net:8651",
+          0,
+          process.env.MNE.length
+        );
+      },
+      network_id: "1001", //Klaytn baobab testnet's network id
+      gas: "8500000",
+      gasPrice: null,
+    },
+    
     //
     // An additional network, but with some advanced options…
     // advanced: {

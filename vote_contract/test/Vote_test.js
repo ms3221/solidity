@@ -4,6 +4,9 @@ const web3 = new Web3("HTTP://127.0.0.1:7545");
 const Vote = artifacts.require("Vote");
 
 
+const provider = new ethers.providers.JsonRpcProvider(providerUrl)
+
+
 contract("Vote", function (accounts) {
 
     let vote;
