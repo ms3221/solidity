@@ -9,13 +9,13 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "_unionName",
+						"name": "unionName",
 						"type": "string"
 					},
 					{
-						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
+						"internalType": "address[]",
+						"name": "_owners",
+						"type": "address[]"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -136,51 +136,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_subject",
-						"type": "string"
-					}
-				],
-				"name": "closeSuggestion",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_subject",
-						"type": "string"
-					}
-				],
-				"name": "createOneSuggestion",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"name": "findSuggestionNo",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint256",
 						"name": "tokenId",
 						"type": "uint256"
@@ -192,92 +147,6 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getSubjects",
-				"outputs": [
-					{
-						"internalType": "string[]",
-						"name": "result",
-						"type": "string[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_num",
-						"type": "uint256"
-					}
-				],
-				"name": "getSuggestionInfo",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "subject",
-								"type": "string"
-							},
-							{
-								"internalType": "uint256",
-								"name": "suggestionNo",
-								"type": "uint256"
-							},
-							{
-								"components": [
-									{
-										"internalType": "string",
-										"name": "suggestion",
-										"type": "string"
-									},
-									{
-										"internalType": "address",
-										"name": "addr",
-										"type": "address"
-									},
-									{
-										"internalType": "uint256",
-										"name": "power",
-										"type": "uint256"
-									},
-									{
-										"internalType": "bool",
-										"name": "voted",
-										"type": "bool"
-									},
-									{
-										"internalType": "string",
-										"name": "answer",
-										"type": "string"
-									}
-								],
-								"internalType": "struct Union.Voter[]",
-								"name": "unionMember",
-								"type": "tuple[]"
-							},
-							{
-								"internalType": "uint256",
-								"name": "totalAmount",
-								"type": "uint256"
-							},
-							{
-								"internalType": "bool",
-								"name": "status",
-								"type": "bool"
-							}
-						],
-						"internalType": "struct Union.Suggestion",
-						"name": "",
-						"type": "tuple"
 					}
 				],
 				"stateMutability": "view",
@@ -302,6 +171,63 @@
 						"internalType": "bool",
 						"name": "",
 						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "isLeadUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "leadUsers",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -340,8 +266,14 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "owner",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -356,11 +288,11 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "tokenId",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "ownerOf",
+				"name": "owners",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -461,72 +393,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "subjects",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "suggestionNo",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "suggestions",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "subject",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "suggestionNo",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "totalAmount",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "status",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "bytes4",
 						"name": "interfaceId",
 						"type": "bytes4"
@@ -616,29 +482,6 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_subject",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "_answer",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "vote",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -694,7 +537,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"vote_contract/contracts/Tunion.sol": "Union"
+			"vote_contract/contracts/UnionNFT.sol": "UnionNFT"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -708,12 +551,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"vote_contract/contracts/Tunion.sol": {
-			"keccak256": "0xe191fd48378514e5faca5bf43fdf97c6a5bc53ad3ce526c568da1f3de6c6ca65",
+		"vote_contract/contracts/UnionNFT.sol": {
+			"keccak256": "0x51cef750c3e12c21bbf989853add5eed0806c8605d5ed58da110b2d9dabc1e3e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8ed062a4c1c9f62fa3381ddfe4a6c10c18fbb1b0615abd5012f7ca9562092078",
-				"dweb:/ipfs/Qma62E69K5gU4a437C9ZY4VjHQvnxbonzGFwssQ4EKzVVL"
+				"bzz-raw://d18419d6df2abcec16c18919dfa6609ff6125d3518c33a1d6459253647296485",
+				"dweb:/ipfs/QmSBg42eKyH7UGUoEnXf3aJtCfRHeujzvSeTvm1HTPnRph"
+			]
+		},
+		"vote_contract/contracts/owner/Role.sol": {
+			"keccak256": "0x6a47e9fc2a4783d86c33b5c0f9d5ac8464f98024a4af633ec8686c417bfabde1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dd861b5786ad0cee4f35e51b6d5352b78e199a513276c21dd69a3c1f14ceceef",
+				"dweb:/ipfs/QmdBy5pSvMPAGhX1Z7NahqoqWDW77feuHgSpE5xVZT4XMF"
 			]
 		},
 		"vote_contract/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
