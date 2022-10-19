@@ -100,7 +100,7 @@ if (typeof window === "object" && typeof window.web3 !== "undefined") {
 async function setupEns(provider, datas = "") {
   // Currently requires both provider and
   // either a network or registryAddress param
-  const ens = new ENS({ provider, network: "3" });
+  const ens = new ENS({ provider, network: "1" });
 
   let arr = datas.trim().split(".eth");
   console.log(arr);

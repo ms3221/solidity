@@ -7,7 +7,7 @@ contract FunctionSelector{
         return bytes4(keccak256(bytes(_func)));
     }
 }
-
+//0x8a4068dd
 contract Receiver{ 
     event Log(bytes data);
     function transfer(address _to, uint _amount) external {
@@ -17,3 +17,4 @@ contract Receiver{
       //000000000000000000000000000000000000000000000000000000000000007b amount
     }
 }
+0xa9059cbb000000000000000000000000b098ae7ddc405a6a6f891693e00c8b9895e1a93f0000000000000000000000000000000000000000000000000000000000000064

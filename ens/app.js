@@ -1,5 +1,5 @@
 const Web3 = require("web3");
-const rpcURL = "https://mainnet.infura.io/v3/63f3a65f31a2448da88e9e75cc18ce99";
+const rpcURL = "https://ropsten.infura.io/v3/aac31604e537478088a025712513c0d7";
 const web3 = new Web3(rpcURL);
 //const { ENS } = require('@ensdomains/ensjs');
 const { ethers } = require("ethers");
@@ -41,6 +41,13 @@ const getBlock = async () => {
 
   //   console.log(history);
   console.time("ens");
+  const data = await CA.methods
+    .getNames([
+      "0xdb41f06dde2afad8670ad926499ec2d05da433ce",
+      "0x0b9dB978b9ea4AbB89d802A12705E05E9D869D14",
+    ])
+    .call();
+  console.log(data);
   // const data = await CA.methods
   //   .getNames([
   //     "0x6080cf28891ebafe772b18aa14c7827bd03acc3e",
@@ -200,10 +207,10 @@ const getBlock = async () => {
   //     "0x15F4b11e24BbB578026f3b38AD5A8B7cf5799343",
   //   ])
   // .call();
-  const str = "aa.eth  asf.eth";
-  const result = str.replace(/ /g, "");
-  console.log(result);
-  console.log(result.split(".eth"));
+  // const str = "aa.eth  asf.eth";
+  // const result = str.replace(/ /g, "");
+  // console.log(result);
+  // console.log(result.split(".eth"));
 
   console.timeEnd("ens");
   //var address = await provider.resolveName('ovadix.eth');
@@ -220,7 +227,7 @@ const getBlock = async () => {
   //    console.log(ensName);
 };
 
-//getBlock();
+getBlock();
 
 function setupEns() {
   const provider = new HttpProvider(
@@ -228,8 +235,7 @@ function setupEns() {
   );
   // Currently requires both provider and
   // either a network or registryAddress param
-  //const data = await CA.methods.getNames(["0xdb41f06dde2afad8670ad926499ec2d05da433ce","0x0b9dB978b9ea4AbB89d802A12705E05E9D869D14"]).call();
-  //console.log(data);
+
   const ens = new ENS({ provider, network: "1" });
   async function test() {
     const address = await ens.getResolverAddress("ovadix.eth");
@@ -237,7 +243,7 @@ function setupEns() {
     console.log(address);
     console.log(addr);
   }
-  test();
+  //test();
   // const name = await ens.reverse("0x0b9dB978b9ea4AbB89d802A12705E05E9D869D14");
   // console.log(name);
   // // ens.lookup('ovadix.eth')
@@ -254,4 +260,4 @@ function setupEns() {
   //   console.error(reason)
   // })
 }
-setupEns();
+//setupEns();

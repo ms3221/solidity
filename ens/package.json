@@ -11,10 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "@ensdomains/ensjs": "^3.0.0-alpha.1",
+    "abi-decoder": "^2.4.0",
     "eth-ens-namehash": "^2.0.8",
     "ethers": "^5.6.9",
     "ethjs-ens": "^2.0.1",
     "ethjs-provider-http": "^0.1.6",
+    "evm-bn": "^1.1.2",
     "web3": "^1.7.4"
   }
 }

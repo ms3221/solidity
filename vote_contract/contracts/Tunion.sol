@@ -11,6 +11,8 @@ contract Union is ERC721URIStorage {
 
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
+    mapping(address => bool)public isOwner;
+    address[] public owners;
 
     /*
  Union 컨트랙트에서는 Union이 여러가지 투표안건을 만들 수 있고 투표할 수 있는 컨트랙트입니다. 
@@ -22,11 +24,12 @@ Voter -> suggestion에 투표하는 union Member 각 한명의 구조체입니�
 */
 
     uint256 public suggestionNo;
-    address public owner;
 
     mapping(string => uint256) public findSuggestionNo;
-    mapping(string => address) public userClaim;
-    mapping(uint => mapping(address => bool)) isVote;
+    mapping(string => uint) public userClaim;
+    mapping(uint => uint) public votePower;
+    mapping(uint => mapping(uint => bool)) public isVote;
+    
 
     Suggestion[] public suggestions;
     string[] public subjects;
@@ -43,29 +46,37 @@ Voter -> suggestion에 투표하는 union Member 각 한명의 구조체입니�
         string suggestion;
         address addr;
         uint256 power;
-        bool voted;
+        uint tokenId;
         string answer;
     }
 
-    constructor(string memory _unionName,address _owner)
+    constructor(string memory _unionName,address[] memory _owners)
         ERC721(_unionName, _unionName)
     {
-        owner = _owner;
+          require(_owners.length > 0, "owners required");
+      for(uint i; i<_owners.length; i++){
+          address owner = _owners[i];
+          require(owner != address(0),"invalid owner");
+          require(!isOwner[owner], "owner is not unique");
+          isOwner[owner] = true;
+          owners.push(owner);
+      }
     }
 
     /*
  1. 중복투표 확인
  2. 관리자는 투표 할 수 없도록 확인 
  */
-    modifier valid(string memory _subject, address voter) {
-             require(!isVote[findSuggestionNo[_subject]][voter],"voted");
+    modifier valid(string memory _subject, uint tokenId) {
+             require(!isVote[findSuggestionNo[_subject]][tokenId],"voted");
+             require(ownerOf(tokenId)==msg.sender,"invaild Token");
            _;
     }
 
-    modifier onlyOwner(){
-          require(owner == msg.sender,"caller is not owner");
-           _;
-    }
+   modifier onlyOwner(){
+       require(isOwner[msg.sender],"not owner");
+       _;
+   }
 
     /*
   안건을 발행 및 저장 
@@ -96,10 +107,10 @@ Voter -> suggestion에 투표하는 union Member 각 한명의 구조체입니�
     function vote(
         string memory _subject,
         string memory _answer,
-        uint256 _amount
+        uint tokenId
     ) 
     public
-    valid(_subject,msg.sender)  
+    valid(_subject,tokenId)  
     {
         Suggestion storage singleSuggestion = suggestions[
             findSuggestionNo[_subject]
@@ -110,12 +121,13 @@ Voter -> suggestion에 투표하는 union Member 각 한명의 구조체입니�
             _subject,
             msg.sender,
             0,
-            true,
+            tokenId,
             _answer
         );
-        singleVoter.power = _amount;
+        singleSuggestion.totalAmount +=  votePower[tokenId];
+        singleVoter.power = votePower[tokenId];
         singleSuggestion.unionMember.push(singleVoter);
-        isVote[ findSuggestionNo[_subject]][msg.sender] = true;
+        isVote[findSuggestionNo[_subject]][tokenId] = true;
     }
 
     /*
@@ -152,12 +164,14 @@ Voter -> suggestion에 투표하는 union Member 각 한명의 구조체입니�
 
 
 
- function mintNFT(string memory tokenURI) external returns (uint256) {
-        require(userClaim[tokenURI] == msg.sender, "no right");
+ function mintNFT(string memory tokenURI,uint amount) external returns (uint256) {
+        require(userClaim[tokenURI] == 999, "no right");
         _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
         _mint(msg.sender, newItemId);
         _setTokenURI(newItemId, tokenURI);
+        userClaim[tokenURI] = newItemId;
+        votePower[newItemId] = amount;
         return newItemId;
     }
     
@@ -167,18 +181,17 @@ Voter -> suggestion에 투표하는 union Member 각 한명의 구조체입니�
        @param userList address배열로 해당되는 조합의 user주소가 담긴 배열
        @param ipfsList string배열로 해당되는 조합의 ipfs hash값이 담긴 배열
        @dev userClaim mapping에 key:ipfsHash value:account 저장
+       @ ** 중복된 문자열이 들어오는 것을 미리 앞에서 check하고 점검해줘야 합니다.
      */
 
-    function setUserList(address[] memory userList, string[] memory ipfsList)
+    function setUserList(string[] memory ipfsList)
         external
         onlyOwner
     {
-        require(userList.length != 0 && ipfsList.length != 0, " zero array");
-        require(userList.length == ipfsList.length, "not same length");
-        for (uint256 i = 0; i < userList.length; i++) {
-            userClaim[ipfsList[i]] = userList[i];
+        require(ipfsList.length != 0, " zero array");
+        for (uint256 i = 0; i < ipfsList.length; i++) {
+            userClaim[ipfsList[i]] = 999;
         }
     }
 
 }
-

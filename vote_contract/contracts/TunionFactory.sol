@@ -30,7 +30,7 @@ contract UnionFactory {
 
     function createUnion(string memory unionName) external onlyOwner {
         
-        Union singleUnion = new Union(unionName, msg.sender);
+        Union singleUnion = new Union(unionName, owners);
      
         findUnionAddress[unionName] = address(singleUnion);
         unionNames.push(unionName);
@@ -52,3 +52,4 @@ contract UnionFactory {
         result = unionNames;
     }
 }
+
