@@ -1,0 +1,8 @@
+
+
+/artifacts
+/node_modules
+/package-lock.json
+/build
+vote_contract/contracts/artifacts/
+/.env

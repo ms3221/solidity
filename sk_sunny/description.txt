@@ -1,0 +1,15 @@
+
+
+//명령어 compile 및 deployed
+truffle migrate --compile-all --network baobab
+
+// 배포된 해당 네트워크 console 실행 
+truffle console --network {네트워크이름}
+
+//해당 NFT 이름 및 symbol 알아보기 
+
+nft = await {해당 컨트랙트 이름}.deployed()
+nft.name()
+nft.symbol()
+nft.mintNFT 
+차례대로 해보면 실행되는것을 알 수 있고 klaytnscope에서 확인 할 수 있다. 

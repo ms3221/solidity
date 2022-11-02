@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const Web3 = require("web3");
 const rpcURL = "https://ropsten.infura.io/v3/aac31604e537478088a025712513c0d7";
 const web3 = new Web3(rpcURL);
@@ -8,24 +7,12 @@ const { ethers } = require("ethers");
 const ENS = require("ethjs-ens");
 const HttpProvider = require("ethjs-provider-http");
 //const provider = new ethers.providers.JsonRpcProvider(rpcURL);
-=======
-const Web3 =  require('web3')
-const rpcURL = "https://mainnet.infura.io/v3/63f3a65f31a2448da88e9e75cc18ce99";
-const web3 = new Web3(rpcURL);
-//const { ENS } = require('@ensdomains/ensjs');
-// const { ethers } =require('ethers');
-//const namehash = require('eth-ens-namehash');
-// const ENS = require('ethjs-ens')
-// const HttpProvider = require('ethjs-provider-http')
-//const provider = new ethers.providers.JsonRpcProvider(rpcURL)
->>>>>>> fabfc77ebaf5e8a54283139c97639364972f28f6
 
 //const ENSInstance = new ENS()
 
 // 0xdB41F06dde2AFAD8670ad926499ec2D05da433ce
 // ovadix
 
-<<<<<<< HEAD
 const abi = [
   {
     inputs: [{ internalType: "contract ENS", name: "_ens", type: "address" }],
@@ -47,11 +34,6 @@ const CA = new web3.eth.Contract(
   abi,
   "0x3671aE578E63FdF66ad4F3E12CC0c0d71Ac7510C"
 );
-=======
- const abi = [{"inputs":[{"internalType":"contract ENS","name":"_ens","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address[]","name":"addresses","type":"address[]"}],"name":"getNames","outputs":[{"internalType":"string[]","name":"r","type":"string[]"}],"stateMutability":"view","type":"function"}];
-
- const CA = new web3.eth.Contract(abi,"0x3671aE578E63FdF66ad4F3E12CC0c0d71Ac7510C");
->>>>>>> fabfc77ebaf5e8a54283139c97639364972f28f6
 
 const getBlock = async () => {
   // await ENSInstance.setProvider(provider)
