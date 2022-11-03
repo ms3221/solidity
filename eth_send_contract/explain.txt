@@ -1,0 +1,3 @@
+
+test 명령어
+# truffle test ./test/sendTest.js --network gan

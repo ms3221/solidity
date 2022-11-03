@@ -1,5 +1,5 @@
 const Web3 = require("web3");
-const web3 = new Web3("HTTP://127.0.0.1:8545");
+const web3 = new Web3("HTTP://127.0.0.1:7545");
 const SendEth = artifacts.require("SendEth");
 // 명령어 truffle test ./test/sendTest.js --network gan
 contract("SendEth", function (accounts) {
