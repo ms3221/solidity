@@ -1,6 +1,7 @@
 const Web3 = require("web3");
 //const rpcURL = "https://ropsten.infura.io/v3/aac31604e537478088a025712513c0d7";
-const rpcURL = "https://mainnet.infura.io/v3/63f3a65f31a2448da88e9e75cc18ce99s";
+//const rpcURL = "https://mainnet.infura.io/v3/63f3a65f31a2448da88e9e75cc18ce99s";
+const rpcURL = "https://eth-goerli.g.alchemy.com/v2/jVomEiZSaJt79dNlKuCnnKH8p9BMNc81";
 const web3 = new Web3(rpcURL);
 const namehash = require("eth-ens-namehash");
 
@@ -537,21 +538,24 @@ async function getTextContract() {
   ];
   const CA2 = new web3.eth.Contract(
     abi2,
-    "0x42D63ae25990889E35F215bC95884039Ba354115"
+    "0xD5610A08E370051a01fdfe4bB3ddf5270af1aA48"
   );
   // Mainnet resolverADDRESS 0x4976fb03c32e5b8cfe2b6ccb31c09ba78ebaba41
   // ropsten resolverADDRESS 0x42D63ae25990889E35F215bC95884039Ba354115
 
-  var hash = namehash.hash("ovdixs.eth");
-  console.log(hash);
+  //var hash = namehash.hash("pado.eth");
+  //console.log(hash,"hash");
+  
   const text = await CA2.methods
-    .name("0xb957f11113993ad75c37544f4cfc77e42b4e3df97ffcb739767f76fab1be1375")
+    .name("0xdB41F06dde2AFAD8670ad926499ec2D05da433ce")
     .call();
   console.log(text);
 }
 
-async function getInfo() {
-  console.log(web3);
-}
+getTextContract()
 
-getInfo();
+// async function getInfo() {
+//   console.log(web3);
+// }
+
+// getInfo();

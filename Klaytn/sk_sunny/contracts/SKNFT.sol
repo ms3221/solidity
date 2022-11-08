@@ -45,7 +45,7 @@ contract SKNFT is KIP17URIStorage, Ownable {
     {
         _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
-        _mint(to, newItemId);
+        _safeMint(to, newItemId);
         _setTokenURI(newItemId, tokenURI);
         return newItemId;
     }

@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "a",
+						"type": "address"
+					}
+				],
+				"name": "setAddr",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Ethereum/ENS/contracts/ENSHandler.sol": "ENSResolver"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ethereum/ENS/contracts/ENSHandler.sol": {
+			"keccak256": "0xc5090d4e6d41200c4ab20181f711138543cce52297aa47f1ec6ca884bd0f60a5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dee202c31b8b21ee0d2cb314ff63c40df6d93deeeffb78ca792b23c151c4c9ca",
+				"dweb:/ipfs/Qmcwo8oURdnrqTG5RfeuLJY4V5hFVYCzUjHCtQG8WKEgrS"
+			]
+		}
+	},
+	"version": 1
+}

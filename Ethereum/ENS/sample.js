@@ -19,6 +19,7 @@ async function setupEns(provider, ensName) {
   console.log(nameHash);
   //0x0b9db978b9ea4abb89d802a12705e05e9d869d14
   // reverse는 mainName을 set 해야지만 가능 안그러면 ENS name not defined error가 발생함
-  const data = await ens.reverse("0x0b9db978b9ea4abb89d802a12705e05e9d869d14");
+  const data = await ens.reverse("0xdB41F06dde2AFAD8670ad926499ec2D05da433ce");
   console.log(data);
 }
+setupEns()

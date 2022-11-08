@@ -1,0 +1,79 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_resolver",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_ens",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_target",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_label",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_subNodeHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "setSubNode",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Ethereum/ENS/contracts/ENSHandler.sol": "ENSHadler"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ethereum/ENS/contracts/ENSHandler.sol": {
+			"keccak256": "0x25f2868277742c00ce67f7baad1c19d6f4a44322d43622e5b8aff3dccd61a443",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9e75ec3eb3efbce506570d18e45e1f54092d4a19aac501d7120a1351e219cbbb",
+				"dweb:/ipfs/QmUtkDcr6g9jyxCooJAVfQwe8bNNScQ2Wg6225Lc5TMfE5"
+			]
+		}
+	},
+	"version": 1
+}
