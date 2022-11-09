@@ -16,7 +16,7 @@ const getBlock = async ()=>{
 }
 
 const ensToAddresss = async ()=>{
-    var address = await web3.eth.ens.getAddress('teest.pado.eth');
+    var address = await web3.eth.ens.getAddress('pado.eth');
     console.log(address); 
 }
 
@@ -45,9 +45,24 @@ const reverseNode = async (address)=>{
 }
 
 const blockSearch = async ()=>{
-   
+  //Transfer (index_topic_1 bytes32 node, address owner)View Source
+  const data = await web3.eth.getPastLogs({
+        fromBlock: 7913008,
+        toBlock: 7920138,
+        address: "0xd2463972ae1d9a97f3ad8a2b22a6584ebba9afee",
+        topics: ["0x970f17cc4e312a681814bcb131a154e9a61fa3317b90bbd0437a58626973b4a0"]
+    })
+    data.forEach( async (data) => {
+        console.log(data.data);
+       const decode = await web3.eth.abi.decodeParameters(['string', 'address'],data.data)
+       console.log(decode);
+    });
+  
 }
-//keccak("abcde")
-//nameHash_node("ovadixs.eth")
-reverseNode("0xb5C7790B60de2A1E214C88ED648fa1593C58b7B8")
+//keccak("abcdefg")
+//nameHash_node("abcc.pado.eth")
+//reverseNode("pado.eth")
 //hashToString()
+blockSearch()
+//ensToAddresss()
+

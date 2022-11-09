@@ -1,5 +1,7 @@
 .env
+artifacts
 package-lock.json
+Ethereum/ENS/contracts/atrifacts
 node_modules/
 
 # https://nochoco-lee.tistory.com/46 ignore관련해서 정리 

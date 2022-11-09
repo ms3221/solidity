@@ -114,11 +114,11 @@
 	},
 	"sources": {
 		"Ethereum/ENS/contracts/ENSHandler.sol": {
-			"keccak256": "0xc5090d4e6d41200c4ab20181f711138543cce52297aa47f1ec6ca884bd0f60a5",
+			"keccak256": "0xd866bad02dd267faaf96ad47f6d938217a14075b267445888f5c303d3398cd7a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://dee202c31b8b21ee0d2cb314ff63c40df6d93deeeffb78ca792b23c151c4c9ca",
-				"dweb:/ipfs/Qmcwo8oURdnrqTG5RfeuLJY4V5hFVYCzUjHCtQG8WKEgrS"
+				"bzz-raw://dd157324652e83374751845dd37cf7d575904cdc0672ad6868bc1c76077a2d42",
+				"dweb:/ipfs/QmXqqGnNWeh95avhmNKmWxjy4dqBNMWs9MSETuBSuxeTEL"
 			]
 		}
 	},

@@ -6,42 +6,44 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_ensAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_ensResolverAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_mainENS",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_label",
+						"type": "string"
+					},
 					{
 						"indexed": false,
 						"internalType": "address",
 						"name": "to",
 						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "bytes32",
-						"name": "_label",
-						"type": "bytes32"
 					}
 				],
-				"name": "NewEns",
+				"name": "NewPNS",
 				"type": "event"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "bytes32",
-						"name": "_bytes32",
-						"type": "bytes32"
-					}
-				],
-				"name": "bytes32ToStr",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -49,6 +51,57 @@
 				"outputs": [
 					{
 						"internalType": "contract ENS",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "handleSubNode",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "namehash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[]",
+						"name": "_name",
+						"type": "string[]"
+					}
+				],
+				"name": "nameHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "namehash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -72,27 +125,17 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes32",
-						"name": "_rootNode",
-						"type": "bytes32"
-					},
-					{
 						"internalType": "address",
 						"name": "_target",
 						"type": "address"
 					},
 					{
-						"internalType": "bytes32",
+						"internalType": "string",
 						"name": "_label",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "bytes32",
-						"name": "_subNodeHash",
-						"type": "bytes32"
+						"type": "string"
 					}
 				],
-				"name": "setSubNode",
+				"name": "setPNS",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -111,7 +154,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Ethereum/ENS/contracts/ENSHandler.sol": "ENSHandler"
+			"Ethereum/ENS/contracts/Strings.sol": "ENSHandler"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -125,12 +168,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Ethereum/ENS/contracts/ENSHandler.sol": {
-			"keccak256": "0xc5090d4e6d41200c4ab20181f711138543cce52297aa47f1ec6ca884bd0f60a5",
+		"Ethereum/ENS/contracts/Strings.sol": {
+			"keccak256": "0x6a56d27f722b247c2f247cb23971aca85f9135ead392c2d3ada76ee5b05ca97e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://dee202c31b8b21ee0d2cb314ff63c40df6d93deeeffb78ca792b23c151c4c9ca",
-				"dweb:/ipfs/Qmcwo8oURdnrqTG5RfeuLJY4V5hFVYCzUjHCtQG8WKEgrS"
+				"bzz-raw://733ea6685a3ecdfba9e6f365ae2f579619978f448362a145e9af61350176ae30",
+				"dweb:/ipfs/QmS554HYoH9r9T363HcZKTpwjpWFTehkt6LiEA3ho8FqTK"
 			]
 		}
 	},

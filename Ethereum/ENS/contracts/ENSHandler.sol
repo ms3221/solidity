@@ -11,29 +11,69 @@ interface ENSResolver {
     function setAddr(bytes32 node, address a) external;
 }
 
-contract ENSHandler {
-    event NewEns(address to, bytes32 _label);
+contract PNSRegistry {
+  ENS public ens;
+  ENSResolver public resolver;
+  address private owner;
+  string[] private rootNodes;
+  
+  event PNSRegistered(string, address);
+  constructor(
+    ENS _ens,
+    ENSResolver _resolver,
+    string[] memory _rootNodes
+  ) {
+    ens = _ens;
+    resolver = _resolver;
+    owner = msg.sender;
+    rootNodes = _rootNodes;
+  }
 
-    ENS public ens = ENS(address(0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e));
-    ENSResolver public resolver = ENSResolver(address(0xE264d5bb84bA3b8061ADC38D3D76e6674aB91852));
+  modifier onlyOwner() {
+    require(msg.sender == owner, "Only owner can call this function.");
+    _;
+  }
 
-    function setSubNode(bytes32 _rootNode, address _target, bytes32 _label, bytes32 _subNodeHash) external {
-        ens.setSubnodeRecord(_rootNode, _label, address(this), address(resolver), 0);
-        resolver.setAddr(_subNodeHash, _target);
-        ens.setOwner(_subNodeHash, _target);
-        emit NewEns(_target, _label);
+  function register(
+    address _target,
+    string memory _label
+  )
+    external
+  {
+    string[] memory nodes = new string[](rootNodes.length + 1);
+    for (uint i = 0; i < rootNodes.length; i++) {
+      nodes[i] = rootNodes[i];
     }
+    nodes[rootNodes.length] = _label;
 
-    function bytes32ToStr(bytes32  _bytes32) public pure returns (string memory) {
+    ens.setSubnodeRecord(
+      _getNodeHash(rootNodes),
+      keccak256(abi.encodePacked(_label)),
+      address(this),
+      address(resolver),
+      0
+    );
 
-    // string memory str = string(_bytes32);
-    // TypeError: Explicit type conversion not allowed from "bytes32" to "string storage pointer"
-    // thus we should fist convert bytes32 to bytes (to dynamically-sized byte array)
+    resolver.setAddr(_getNodeHash(nodes), _target);
+    ens.setOwner(_getNodeHash(nodes), _target );
+    emit PNSRegistered(_label, _target);
+  }
 
-    bytes memory bytesArray = new bytes(32);
-    for (uint256 i; i < 32; i++) {
-        bytesArray[i] = _bytes32[i];
-        }
-    return string(bytesArray);
+  function _getNodeHash(
+    string[] memory _nodes
+  )
+    internal
+    pure
+    returns (
+      bytes32 namehash
+    )
+  {
+    namehash = 0x0000000000000000000000000000000000000000000000000000000000000000;
+
+    for (uint i = 0; i < _nodes.length; i++) {
+      namehash = keccak256(
+        abi.encodePacked(namehash, keccak256(abi.encodePacked(_nodes[i])))
+      );
     }
+  }
 }
