@@ -4,12 +4,11 @@ const rpcURL = "https://eth-mainnet.g.alchemy.com/v2/U4SuB5RfZ7kX8LMEFcUg68fvzDy
 const web3 = new Web3(rpcURL);
 const namehash = require("eth-ens-namehash");
 const { Alchemy } = require('alchemy-sdk');
-
-const apiKey = "U4SuB5RfZ7kX8LMEFcUg68fvzDyyD7HP";
+require('dotenv').config()
+const apiKey = process.env.ALCHEMY_API_KEY || null;
 const settings = {
     apiKey: apiKey
 };
-
 const alchemy = new Alchemy(settings);
 
 /**
