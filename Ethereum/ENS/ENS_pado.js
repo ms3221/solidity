@@ -1,7 +1,16 @@
 const Web3 = require("web3");
-const rpcURL = "https://eth-goerli.g.alchemy.com/v2/jVomEiZSaJt79dNlKuCnnKH8p9BMNc81";
+//const rpcURL = "https://eth-goerli.g.alchemy.com/v2/jVomEiZSaJt79dNlKuCnnKH8p9BMNc81";
+const rpcURL = "https://eth-mainnet.g.alchemy.com/v2/U4SuB5RfZ7kX8LMEFcUg68fvzDyyD7HP";
 const web3 = new Web3(rpcURL);
 const namehash = require("eth-ens-namehash");
+const { Alchemy } = require('alchemy-sdk');
+
+const apiKey = "U4SuB5RfZ7kX8LMEFcUg68fvzDyyD7HP";
+const settings = {
+    apiKey: apiKey
+};
+
+const alchemy = new Alchemy(settings);
 
 /**
  *  testnet = goerli ENS
@@ -10,6 +19,15 @@ const namehash = require("eth-ens-namehash");
  *  rootNoode : 0xfd7f5c28743a891291f9f9971b1e06920f5a26919632c52b05c186bbc4d2fb54(pado.eth nameHash)
  */
 
+/**
+ *  mainnet = goerli ENS
+ *  resolver : 0x4976fb03c32e5b8cfe2b6ccb31c09ba78ebaba41
+ *  _ens : 0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e
+ *  rootNoode : 0xfd7f5c28743a891291f9f9971b1e06920f5a26919632c52b05c186bbc4d2fb54(pado.eth nameHash)
+ */
+
+const main = async ()=>{
+    
 const getBlock = async ()=>{
     const blockData = await web3.eth.getBlock('latest');
     console.log(blockData);
@@ -56,13 +74,47 @@ const blockSearch = async ()=>{
         console.log(data.data);
        const decode = await web3.eth.abi.decodeParameters(['string', 'address'],data.data)
        console.log(decode);
-    });
-  
+    }); 
+ }
+
+const getTransactionReceipt = async (tx)=>{
+    const receipt = await web3.eth.getTransactionReceipt(tx)
+    console.log(receipt);
 }
+
+const getSapmContract = async ()=>{
+    const address = 'e1e1e1.eth';
+
+    // Get spam contracts
+    let spamContracts = await alchemy.nft.getSpamContracts();
+
+    // Get NFTs of owner
+    let nfts = await alchemy.nft.getNftsForOwner(address);
+    console.log(nfts['ownedNfts'].length);
+    console.log("Spam NFTs:")
+    counter = 1
+
+    // Print out titles of spam NFTs
+    for (let i = 0; i < nfts['ownedNfts'].length; i++) {
+        contractAddr = nfts['ownedNfts'][i]['contract']['address'];
+        if (spamContracts.includes(contractAddr)) {
+            console.log(`${counter}. ${nfts['ownedNfts'][i]['title']}`);
+            counter += 1;
+        }
+    }
+}
+
 //keccak("abcdefg")
-//nameHash_node("abcc.pado.eth")
+//nameHash_node("xxxxyz.pado.eth")
 //reverseNode("pado.eth")
 //hashToString()
-blockSearch()
+//blockSearch()
 //ensToAddresss()
+//getTransactionReceipt("0x229e29204a85ffe7ae2e765602949a4fa2d36d891514aa0091fd15b3dd20ff16")
+getSapmContract()
+}
+
+main()
+
+
 

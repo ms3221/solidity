@@ -12,6 +12,7 @@
   "dependencies": {
     "@ensdomains/ensjs": "^3.0.0-alpha.1",
     "abi-decoder": "^2.4.0",
+    "alchemy-sdk": "^2.2.1",
     "eth-ens-namehash": "^2.0.8",
     "ethers": "^5.6.9",
     "ethjs-ens": "^2.0.1",
