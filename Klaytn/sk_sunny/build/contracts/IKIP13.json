@@ -21,7 +21,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface of the KIP13 standard as defined in the KIP. See - http://kips.klaytn.com/KIPs/kip-13-interface_query_standard\",\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"Returns true if this contract implements the interface defined by `interfaceId`. See - http://kips.klaytn.com/KIPs/kip-13-interface_query_standard#how-interface-identifiers-are-defined to learn more about how these ids are created. Requirements: - implementation of this function call must use less than 30 000 gas\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@klaytn/contracts/KIP/utils/introspection/IKIP13.sol\":\"IKIP13\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@klaytn/contracts/KIP/utils/introspection/IKIP13.sol\":{\"keccak256\":\"0xb63277576f18a3a05c2ec7736bbb7b4a0bd0d12bbd823a4751144d60273a2c46\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3d5b38071876acadb51cd31254f6eefa30d9240c21b531bdb89648f7475231fd\",\"dweb:/ipfs/QmVvkB9Uwwdq2QJp1uU6eJrcetmaU9zdcNvdg2z9zRmy9e\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface of the KIP13 standard as defined in the KIP. See - http://kips.klaytn.com/KIPs/kip-13-interface_query_standard\",\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"Returns true if this contract implements the interface defined by `interfaceId`. See - http://kips.klaytn.com/KIPs/kip-13-interface_query_standard#how-interface-identifiers-are-defined to learn more about how these ids are created. Requirements: - implementation of this function call must use less than 30 000 gas\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/node_modules/@klaytn/contracts/KIP/utils/introspection/IKIP13.sol\":\"IKIP13\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/node_modules/@klaytn/contracts/KIP/utils/introspection/IKIP13.sol\":{\"keccak256\":\"0xb63277576f18a3a05c2ec7736bbb7b4a0bd0d12bbd823a4751144d60273a2c46\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3d5b38071876acadb51cd31254f6eefa30d9240c21b531bdb89648f7475231fd\",\"dweb:/ipfs/QmVvkB9Uwwdq2QJp1uU6eJrcetmaU9zdcNvdg2z9zRmy9e\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -30,20 +30,20 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// Klaytn Contract Library v1.0.0 (KIP/utils/introspection/IKIP13.sol)\n// Based on OpenZeppelin Contracts v4.5.0 (utils/introspection/IERC165.sol)\n// https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v4.5.0\n\npragma solidity ^0.8.0;\n\n/**\n * @dev Interface of the KIP13 standard as defined in the KIP.\n *\n * See - http://kips.klaytn.com/KIPs/kip-13-interface_query_standard\n */\ninterface IKIP13 {\n    /**\n     * @dev Returns true if this contract implements the interface defined by\n     * `interfaceId`.\n     * See - http://kips.klaytn.com/KIPs/kip-13-interface_query_standard#how-interface-identifiers-are-defined\n     * to learn more about how these ids are created.\n     *\n     * Requirements:\n     *\n     * - implementation of this function call must use less than 30 000 gas\n     */\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\n}\n",
-  "sourcePath": "@klaytn/contracts/KIP/utils/introspection/IKIP13.sol",
+  "sourcePath": "/Users/anhyeongjun/Desktop/solidity/Klaytn/sk_sunny/node_modules/@klaytn/contracts/KIP/utils/introspection/IKIP13.sol",
   "ast": {
-    "absolutePath": "@klaytn/contracts/KIP/utils/introspection/IKIP13.sol",
+    "absolutePath": "project:/node_modules/@klaytn/contracts/KIP/utils/introspection/IKIP13.sol",
     "exportedSymbols": {
       "IKIP13": [
-        1244
+        3738
       ]
     },
-    "id": 1245,
+    "id": 3739,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1234,
+        "id": 3728,
         "literals": [
           "solidity",
           "^",
@@ -51,7 +51,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "258:23:6"
+        "src": "258:23:23"
       },
       {
         "abstract": false,
@@ -60,48 +60,48 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 1235,
+          "id": 3729,
           "nodeType": "StructuredDocumentation",
-          "src": "283:142:6",
+          "src": "283:142:23",
           "text": " @dev Interface of the KIP13 standard as defined in the KIP.\n See - http://kips.klaytn.com/KIPs/kip-13-interface_query_standard"
         },
         "fullyImplemented": false,
-        "id": 1244,
+        "id": 3738,
         "linearizedBaseContracts": [
-          1244
+          3738
         ],
         "name": "IKIP13",
-        "nameLocation": "436:6:6",
+        "nameLocation": "436:6:23",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "documentation": {
-              "id": 1236,
+              "id": 3730,
               "nodeType": "StructuredDocumentation",
-              "src": "449:387:6",
+              "src": "449:387:23",
               "text": " @dev Returns true if this contract implements the interface defined by\n `interfaceId`.\n See - http://kips.klaytn.com/KIPs/kip-13-interface_query_standard#how-interface-identifiers-are-defined\n to learn more about how these ids are created.\n Requirements:\n - implementation of this function call must use less than 30 000 gas"
             },
             "functionSelector": "01ffc9a7",
-            "id": 1243,
+            "id": 3737,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "supportsInterface",
-            "nameLocation": "850:17:6",
+            "nameLocation": "850:17:23",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1239,
+              "id": 3733,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1238,
+                  "id": 3732,
                   "mutability": "mutable",
                   "name": "interfaceId",
-                  "nameLocation": "875:11:6",
+                  "nameLocation": "875:11:23",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1243,
-                  "src": "868:18:6",
+                  "scope": 3737,
+                  "src": "868:18:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -109,10 +109,10 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 1237,
+                    "id": 3731,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "868:6:6",
+                    "src": "868:6:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -121,21 +121,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "867:20:6"
+              "src": "867:20:23"
             },
             "returnParameters": {
-              "id": 1242,
+              "id": 3736,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1241,
+                  "id": 3735,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1243,
-                  "src": "911:4:6",
+                  "scope": 3737,
+                  "src": "911:4:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -143,10 +143,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1240,
+                    "id": 3734,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "911:4:6",
+                    "src": "911:4:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -155,29 +155,29 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "910:6:6"
+              "src": "910:6:23"
             },
-            "scope": 1244,
-            "src": "841:76:6",
+            "scope": 3738,
+            "src": "841:76:23",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1245,
-        "src": "426:493:6",
+        "scope": 3739,
+        "src": "426:493:23",
         "usedErrors": []
       }
     ],
-    "src": "258:662:6"
+    "src": "258:662:23"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.14+commit.80d49f37.Emscripten.clang"
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-10-21T03:07:47.241Z",
+  "updatedAt": "2022-11-25T05:16:08.023Z",
   "devdoc": {
     "details": "Interface of the KIP13 standard as defined in the KIP. See - http://kips.klaytn.com/KIPs/kip-13-interface_query_standard",
     "kind": "dev",
