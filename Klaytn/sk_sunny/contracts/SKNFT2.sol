@@ -6,7 +6,7 @@ import "../node_modules/@klaytn/contracts/KIP/token/KIP17/extensions/KIP17URISto
 import "../node_modules/@klaytn/contracts/access/Ownable.sol";
 import "../node_modules/@klaytn/contracts/utils/Counters.sol";
 
-contract SKNFT is KIP17URIStorage, Ownable {
+contract SKNFT2 is KIP17URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
     mapping(address => bool) whitelistedAddresses;
@@ -38,18 +38,15 @@ contract SKNFT is KIP17URIStorage, Ownable {
         return whitelistedAddresses[_whitelistedAddress];
     }
 
-    function mintNFT(address to, string memory tokenURI)
+    function mintNFT(uint badge, address to, uint tokenId, string memory tokenURI)
         public
         isWhitelisted
         returns (uint256)
     {
-        _tokenIds.increment();
-        uint256 newItemId = _tokenIds.current();
-        _safeMint(to, newItemId);
-        _setTokenURI(newItemId, tokenURI);
-        return newItemId;
+        _safeMint(to, tokenId);
+        _setTokenURI(tokenId, tokenURI);
+        return tokenId;
     }
-
     //NFT전송에서 권한을 ON / OFF 하기위해서 override해서 require문을 추가해 줬다 
     function transferFrom(
         address from,

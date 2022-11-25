@@ -21,7 +21,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Implementation of the {IKIP13} interface. Contracts that want to implement KIP13 should inherit from this contract and override {supportsInterface} to check for the additional interface id that will be supported. For example: ```solidity function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId); } ``` Alternatively, {KIP13Storage} provides an easier to use but more expensive implementation.\",\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"See {IKIP13-supportsInterface}.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@klaytn/contracts/KIP/utils/introspection/KIP13.sol\":\"KIP13\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@klaytn/contracts/KIP/interfaces/IKIP13.sol\":{\"keccak256\":\"0x538533dcc430536d456ae9e781680ca578ce70bab6b2db7cc18422d2babfd030\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2138a452ed0d0e65ec203a3b4cc610c065b8072efdd3d7757914c0597f1a08fb\",\"dweb:/ipfs/QmR5TvG2H5SwbLmDMnbUHfDxxHW6upYLdCbsZtibHVEvEr\"]},\"@klaytn/contracts/KIP/utils/introspection/IKIP13.sol\":{\"keccak256\":\"0xb63277576f18a3a05c2ec7736bbb7b4a0bd0d12bbd823a4751144d60273a2c46\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3d5b38071876acadb51cd31254f6eefa30d9240c21b531bdb89648f7475231fd\",\"dweb:/ipfs/QmVvkB9Uwwdq2QJp1uU6eJrcetmaU9zdcNvdg2z9zRmy9e\"]},\"@klaytn/contracts/KIP/utils/introspection/KIP13.sol\":{\"keccak256\":\"0x9efe61dd73941b281759ca65eaaa0338c9a4105ba8c5d5c5b4998438830c8ed9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://261ed10e8f4c3c6408f119e62b87acc63413ff3c848c4b415e2a596eda29aacf\",\"dweb:/ipfs/QmeaBqThx2gmgG4HrR6Uk6Xjcyx5kUs2SSRMK4nkUZRVX6\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Implementation of the {IKIP13} interface. Contracts that want to implement KIP13 should inherit from this contract and override {supportsInterface} to check for the additional interface id that will be supported. For example: ```solidity function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId); } ``` Alternatively, {KIP13Storage} provides an easier to use but more expensive implementation.\",\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"See {IKIP13-supportsInterface}.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/node_modules/@klaytn/contracts/KIP/utils/introspection/KIP13.sol\":\"KIP13\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/node_modules/@klaytn/contracts/KIP/interfaces/IKIP13.sol\":{\"keccak256\":\"0x538533dcc430536d456ae9e781680ca578ce70bab6b2db7cc18422d2babfd030\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2138a452ed0d0e65ec203a3b4cc610c065b8072efdd3d7757914c0597f1a08fb\",\"dweb:/ipfs/QmR5TvG2H5SwbLmDMnbUHfDxxHW6upYLdCbsZtibHVEvEr\"]},\"project:/node_modules/@klaytn/contracts/KIP/utils/introspection/IKIP13.sol\":{\"keccak256\":\"0xb63277576f18a3a05c2ec7736bbb7b4a0bd0d12bbd823a4751144d60273a2c46\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3d5b38071876acadb51cd31254f6eefa30d9240c21b531bdb89648f7475231fd\",\"dweb:/ipfs/QmVvkB9Uwwdq2QJp1uU6eJrcetmaU9zdcNvdg2z9zRmy9e\"]},\"project:/node_modules/@klaytn/contracts/KIP/utils/introspection/KIP13.sol\":{\"keccak256\":\"0x9efe61dd73941b281759ca65eaaa0338c9a4105ba8c5d5c5b4998438830c8ed9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://261ed10e8f4c3c6408f119e62b87acc63413ff3c848c4b415e2a596eda29aacf\",\"dweb:/ipfs/QmeaBqThx2gmgG4HrR6Uk6Xjcyx5kUs2SSRMK4nkUZRVX6\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -30,23 +30,23 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// Klaytn Contract Library v1.0.0 (KIP/utils/introspection/KIP13.sol)\n// Based on OpenZeppelin Contracts v4.5.0 (utils/introspection/ERC165.sol)\n// https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v4.5.0\n\npragma solidity ^0.8.0;\n\nimport \"../../interfaces/IKIP13.sol\";\n\n/**\n * @dev Implementation of the {IKIP13} interface.\n *\n * Contracts that want to implement KIP13 should inherit from this contract and override {supportsInterface} to check\n * for the additional interface id that will be supported. For example:\n *\n * ```solidity\n * function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\n *     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId);\n * }\n * ```\n *\n * Alternatively, {KIP13Storage} provides an easier to use but more expensive implementation.\n */\nabstract contract KIP13 is IKIP13 {\n    /**\n     * @dev See {IKIP13-supportsInterface}.\n     */\n    function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\n        return interfaceId == type(IKIP13).interfaceId;\n    }\n}\n",
-  "sourcePath": "@klaytn/contracts/KIP/utils/introspection/KIP13.sol",
+  "sourcePath": "/Users/anhyeongjun/Desktop/solidity/Klaytn/sk_sunny/node_modules/@klaytn/contracts/KIP/utils/introspection/KIP13.sol",
   "ast": {
-    "absolutePath": "@klaytn/contracts/KIP/utils/introspection/KIP13.sol",
+    "absolutePath": "project:/node_modules/@klaytn/contracts/KIP/utils/introspection/KIP13.sol",
     "exportedSymbols": {
       "IKIP13": [
-        1244
+        3738
       ],
       "KIP13": [
-        1268
+        3762
       ]
     },
-    "id": 1269,
+    "id": 3763,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1246,
+        "id": 3740,
         "literals": [
           "solidity",
           "^",
@@ -54,17 +54,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "256:23:7"
+        "src": "256:23:24"
       },
       {
-        "absolutePath": "@klaytn/contracts/KIP/interfaces/IKIP13.sol",
+        "absolutePath": "project:/node_modules/@klaytn/contracts/KIP/interfaces/IKIP13.sol",
         "file": "../../interfaces/IKIP13.sol",
-        "id": 1247,
+        "id": 3741,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1269,
-        "sourceUnit": 3,
-        "src": "281:37:7",
+        "scope": 3763,
+        "sourceUnit": 2497,
+        "src": "281:37:24",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -73,44 +73,47 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 1249,
+              "id": 3743,
               "name": "IKIP13",
+              "nameLocations": [
+                "921:6:24"
+              ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 1244,
-              "src": "921:6:7"
+              "referencedDeclaration": 3738,
+              "src": "921:6:24"
             },
-            "id": 1250,
+            "id": 3744,
             "nodeType": "InheritanceSpecifier",
-            "src": "921:6:7"
+            "src": "921:6:24"
           }
         ],
         "canonicalName": "KIP13",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 1248,
+          "id": 3742,
           "nodeType": "StructuredDocumentation",
-          "src": "320:573:7",
+          "src": "320:573:24",
           "text": " @dev Implementation of the {IKIP13} interface.\n Contracts that want to implement KIP13 should inherit from this contract and override {supportsInterface} to check\n for the additional interface id that will be supported. For example:\n ```solidity\n function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\n     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId);\n }\n ```\n Alternatively, {KIP13Storage} provides an easier to use but more expensive implementation."
         },
         "fullyImplemented": true,
-        "id": 1268,
+        "id": 3762,
         "linearizedBaseContracts": [
-          1268,
-          1244
+          3762,
+          3738
         ],
         "name": "KIP13",
-        "nameLocation": "912:5:7",
+        "nameLocation": "912:5:24",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "baseFunctions": [
-              1243
+              3737
             ],
             "body": {
-              "id": 1266,
+              "id": 3760,
               "nodeType": "Block",
-              "src": "1085:63:7",
+              "src": "1085:63:24",
               "statements": [
                 {
                   "expression": {
@@ -118,18 +121,18 @@
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
                     },
-                    "id": 1264,
+                    "id": 3758,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 1259,
+                      "id": 3753,
                       "name": "interfaceId",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1253,
-                      "src": "1102:11:7",
+                      "referencedDeclaration": 3747,
+                      "src": "1102:11:24",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes4",
                         "typeString": "bytes4"
@@ -141,14 +144,14 @@
                       "expression": {
                         "arguments": [
                           {
-                            "id": 1261,
+                            "id": 3755,
                             "name": "IKIP13",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1244,
-                            "src": "1122:6:7",
+                            "referencedDeclaration": 3738,
+                            "src": "1122:6:24",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_IKIP13_$1244_$",
+                              "typeIdentifier": "t_type$_t_contract$_IKIP13_$3738_$",
                               "typeString": "type(contract IKIP13)"
                             }
                           }
@@ -156,95 +159,97 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_type$_t_contract$_IKIP13_$1244_$",
+                              "typeIdentifier": "t_type$_t_contract$_IKIP13_$3738_$",
                               "typeString": "type(contract IKIP13)"
                             }
                           ],
-                          "id": 1260,
+                          "id": 3754,
                           "name": "type",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4294967269,
-                          "src": "1117:4:7",
+                          "src": "1117:4:24",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
                             "typeString": "function () pure"
                           }
                         },
-                        "id": 1262,
+                        "id": 3756,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "functionCall",
                         "lValueRequested": false,
+                        "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1117:12:7",
+                        "src": "1117:12:24",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_magic_meta_type_t_contract$_IKIP13_$1244",
+                          "typeIdentifier": "t_magic_meta_type_t_contract$_IKIP13_$3738",
                           "typeString": "type(contract IKIP13)"
                         }
                       },
-                      "id": 1263,
+                      "id": 3757,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
+                      "memberLocation": "1130:11:24",
                       "memberName": "interfaceId",
                       "nodeType": "MemberAccess",
-                      "src": "1117:24:7",
+                      "src": "1117:24:24",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes4",
                         "typeString": "bytes4"
                       }
                     },
-                    "src": "1102:39:7",
+                    "src": "1102:39:24",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 1258,
-                  "id": 1265,
+                  "functionReturnParameters": 3752,
+                  "id": 3759,
                   "nodeType": "Return",
-                  "src": "1095:46:7"
+                  "src": "1095:46:24"
                 }
               ]
             },
             "documentation": {
-              "id": 1251,
+              "id": 3745,
               "nodeType": "StructuredDocumentation",
-              "src": "934:55:7",
+              "src": "934:55:24",
               "text": " @dev See {IKIP13-supportsInterface}."
             },
             "functionSelector": "01ffc9a7",
-            "id": 1267,
+            "id": 3761,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "supportsInterface",
-            "nameLocation": "1003:17:7",
+            "nameLocation": "1003:17:24",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 1255,
+              "id": 3749,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "1061:8:7"
+              "src": "1061:8:24"
             },
             "parameters": {
-              "id": 1254,
+              "id": 3748,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1253,
+                  "id": 3747,
                   "mutability": "mutable",
                   "name": "interfaceId",
-                  "nameLocation": "1028:11:7",
+                  "nameLocation": "1028:11:24",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1267,
-                  "src": "1021:18:7",
+                  "scope": 3761,
+                  "src": "1021:18:24",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -252,10 +257,10 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 1252,
+                    "id": 3746,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1021:6:7",
+                    "src": "1021:6:24",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -264,21 +269,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1020:20:7"
+              "src": "1020:20:24"
             },
             "returnParameters": {
-              "id": 1258,
+              "id": 3752,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1257,
+                  "id": 3751,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1267,
-                  "src": "1079:4:7",
+                  "scope": 3761,
+                  "src": "1079:4:24",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -286,10 +291,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1256,
+                    "id": 3750,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1079:4:7",
+                    "src": "1079:4:24",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -298,29 +303,29 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1078:6:7"
+              "src": "1078:6:24"
             },
-            "scope": 1268,
-            "src": "994:154:7",
+            "scope": 3762,
+            "src": "994:154:24",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 1269,
-        "src": "894:256:7",
+        "scope": 3763,
+        "src": "894:256:24",
         "usedErrors": []
       }
     ],
-    "src": "256:895:7"
+    "src": "256:895:24"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.14+commit.80d49f37.Emscripten.clang"
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-10-21T03:07:47.243Z",
+  "updatedAt": "2022-11-25T05:16:08.024Z",
   "devdoc": {
     "details": "Implementation of the {IKIP13} interface. Contracts that want to implement KIP13 should inherit from this contract and override {supportsInterface} to check for the additional interface id that will be supported. For example: ```solidity function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId); } ``` Alternatively, {KIP13Storage} provides an easier to use but more expensive implementation.",
     "kind": "dev",

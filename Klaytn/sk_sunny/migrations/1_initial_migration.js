@@ -1,6 +1,6 @@
 const fs = require("fs");
-const SKNFT = artifacts.require("SKNFT.sol"); // MyNFTs.sol 파일 추가
+const SKNFT2 = artifacts.require("SKNFT2.sol"); // MyNFTs.sol 파일 추가
 
 module.exports = function (deployer) {
-  deployer.deploy(SKNFT); // MyNFTs를 배포에 추가
+  deployer.deploy(SKNFT2); // MyNFTs를 배포에 추가
 };

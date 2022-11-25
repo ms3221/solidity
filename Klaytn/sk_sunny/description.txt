@@ -13,3 +13,6 @@ nft.name()
 nft.symbol()
 nft.mintNFT 
 차례대로 해보면 실행되는것을 알 수 있고 klaytnscope에서 확인 할 수 있다. 
+
+test 명령어 
+truffle test ./test/SK.js
