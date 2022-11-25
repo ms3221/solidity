@@ -9,7 +9,6 @@ contract UnionFactory {
     string[] public unionNames;
     mapping(string => address) findUnionAddress;
     mapping(address => bool)public isOwner;
- d
     address[] public owners;
 
     constructor(address[] memory _owners) {
