@@ -6,7 +6,14 @@ import "../node_modules/@klaytn/contracts/KIP/token/KIP17/extensions/KIP17URISto
 import "../node_modules/@klaytn/contracts/access/Ownable.sol";
 import "../node_modules/@klaytn/contracts/utils/Counters.sol";
 
+library SafeMath {
+   function calculateBadge(uint256 badge) internal pure returns(uint256){
+       return badge/2;
+   }
+}
+
 contract SKNFT2 is KIP17URIStorage, Ownable {
+    using SafeMath for uint256;
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
     mapping(address => bool) whitelistedAddresses;
@@ -43,6 +50,12 @@ contract SKNFT2 is KIP17URIStorage, Ownable {
         isWhitelisted
         returns (uint256)
     {
+      // badge 4개면 nft총량은 2개
+      // badge 3개면 nft총량은 1개
+       if(balanceOf(to) != 0){
+         uint256 allowNum = SafeMath.calculateBadge(badge);
+         require(allowNum > balanceOf(to), "badge < balance");
+        }
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, tokenURI);
         return tokenId;

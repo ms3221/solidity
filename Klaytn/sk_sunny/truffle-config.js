@@ -24,22 +24,22 @@ module.exports = {
       port: 7545, // Standard Ethereum port (default: none)
       network_id: "*", // Any network (default: none)
     },
-    baobab: {
-      provider: new HDWalletProvider(process.env.PRIVATE_KEY, URL),
-      network_id: 1001,
-      gas: 20000000,
-      gasPrice: null,
-    },
-    mainnet: {
-      provider: () =>
-        new HDWalletProvider(
-          process.env.PRIVATE_KEY,
-          "https://klaytn-mainnet-rpc.allthatnode.com:8551"
-        ),
-      network_id: "8217", //Klaytn mainnet's network id
-      gas: 20000000,
-      gasPrice: null,
-    },
+    // baobab: {
+    //   provider: new HDWalletProvider(process.env.PRIVATE_KEY, URL),
+    //   network_id: 1001,
+    //   gas: 20000000,
+    //   gasPrice: null,
+    // },
+    // mainnet: {
+    //   provider: () =>
+    //     new HDWalletProvider(
+    //       process.env.PRIVATE_KEY,
+    //       "https://klaytn-mainnet-rpc.allthatnode.com:8551"
+    //     ),
+    //   network_id: "8217", //Klaytn mainnet's network id
+    //   gas: 20000000,
+    //   gasPrice: null,
+    // },
   },
 
   // Set default mocha options here, use special reporters, etc.
