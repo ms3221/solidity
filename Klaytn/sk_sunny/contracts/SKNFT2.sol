@@ -71,21 +71,12 @@ contract SKNFT2 is KIP17URIStorage, Ownable {
         isWhitelisted(to)
         returns (uint256)
     {
-<<<<<<< HEAD
-      // badge 4개면 nft총량은 2개
-      // badge 3개면 nft총량은 1개
-       if(balanceOf(to) != 0){
-         uint256 allowNum = SafeMath.calculateBadge(badge);
-         require(allowNum > balanceOf(to), "badge < balance");
-        }
-=======
           Member memory user = memberByOwner[to];
           uint256 bal = balanceOf(to);
           uint256 badge = user.badage;
           if(bal>0){
             require(badge/2 > bal || badge/2 - bal >= 1, 'badge < bal or 0.5< badge < 1');
           }
->>>>>>> 21bb0aaf062de7111719b94029007b057aae08eb
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, tokenURI);
         return tokenId;
